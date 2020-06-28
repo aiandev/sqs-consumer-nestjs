@@ -1,0 +1,16 @@
+{
+  "name": "consumers",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node ./consumer-exchange.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "squiss-ts": "^4.1.0",
+    "ts-node": "^8.10.2"
+  }
+}
