@@ -15,10 +15,10 @@ export class AppController {
     @Post('/exchange')
     async exchange(
         @Res() res,
-        @Body() ExchangeDTO: ExchangeDTO,
+        @Body() exchangeDTO: ExchangeDTO,
     ) {
       try {
-        const insertedInSQS = await this.appService.sendConversion(ExchangeDTO);
+        const insertedInSQS = await this.appService.sendConversion(exchangeDTO);
         return res.status(HttpStatus.CREATED).json([
           insertedInSQS
         ]);
