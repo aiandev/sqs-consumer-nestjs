@@ -17,5 +17,5 @@ export class ExchangeDTO {
 
     @IsNotEmpty()
     @IsEmail()
-    readonly email: string;
+    readonly customerEmail: string;
 }

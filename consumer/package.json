@@ -1,7 +1,7 @@
 {
   "name": "consumers",
   "version": "1.0.0",
-  "description": "",
+  "description": "Consumer SQS messages",
   "scripts": {
     "start": "ts-node ./consumer-exchange.ts"
   },
@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^14.0.14",
     "axios": "^0.19.2",
     "squiss-ts": "^4.1.0",
-    "ts-node": "^8.10.2"
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
   }
 }

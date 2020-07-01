@@ -1,12 +1,28 @@
-version: '3'
-
+version: '3.4'
+    
 services:
   consumer:
     build: './consumer'
+    volumes:
+      - ./consumer/.:/usr/src/app
+      - /usr/src/app/node_modules
+    environment: 
+      - API_KEY_OPEN_EXCHANGE=${API_KEY_OPEN_EXCHANGE}
+      - OPEN_EXCHANGE_URL=https://openexchangerates.org/api/convert
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - SQS_QUEUE_NAME=exchange-request-sqs-queue
   nestjs:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: './backend'
+    volumes:
+      - ./backend/.:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - "3000:3000"
-    
+    environment: 
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - SQS_QUEUE_NAME=exchange-request-sqs-queue
+ 
