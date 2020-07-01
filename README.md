@@ -26,39 +26,18 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+To run app please make sure these varaibles are set correctly 
+API_KEY_OPEN_EXCHANGE 
+AWS_ACCESS_KEY_ID 
+AWS_SECRET_ACCESS_KEY
+AWS_DEFAULT_REGION 
 
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
+## run
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ docker-compose up
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
 
